@@ -1,0 +1,36 @@
+body {
+  background: url("ww2image.jpg");
+  background-size: cover;
+}
+
+.title {
+  font-size: 500%;     /* gör texten stor */
+  color: rgb(0, 0, 0);        /* vit text */
+  text-align: center;  /* centrerar */
+  margin-top: 5%;   /* flyttar ner den */
+}
+
+.subtitle {
+  font-size: 150%;       /* mindre än rubriken */
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-top: -3%;      /* lite mellanrum från rubriken */
+}
+
+.my-button {
+  font-size: 2.5%;          /* textstorlek i knappen */
+  padding: 1% 2%;            /* inre avstånd (höjd och bredd) */
+  margin-top: 10%;            /* avstånd från underrubrik */
+  border: 2px solid white;   /* vit border */
+  border-radius: 10px;       /* rundade hörn */
+  background-color: transparent; /* transparent bakgrund */
+  color: white;              /* textfärg */
+  cursor: pointer;           /* visar hand när man hovrar */
+  transition: 0.3s;          /* mjuk övergång vid hover */
+}
+
+/* hover-effekt (valfri) */
+.my-button:hover {
+  background-color: white;
+  color: black;
+}
