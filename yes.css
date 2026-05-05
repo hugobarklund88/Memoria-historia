@@ -1,4 +1,95 @@
 body {
-  background: url("ww2image.jpg");
+  background: url("heavy-tank-tiger-tank-tiger-tiger-panzer-german-german-soldi.jpg");
   background-size: cover;
+}
+
+/* This represents your overall website background */
+body {
+    background-color: #e3f2fd; /* Light blue website background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+/* The "Card" behind the quiz */
+.quiz-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 640px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-top: 10px solid #b60d0d; /* Google Forms purple accent */
+    overflow: hidden;
+    opacity: 75%;
+}
+
+.quiz-header {
+    padding: 24px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.quiz-header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+/* Individual question sections */
+.question-card {
+    padding: 24px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.question-text {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+/* Radio button styling */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Text input styling */
+.text-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px 0;
+    font-size: 14px;
+    outline: none;
+    transition: border-bottom 0.3s;
+}
+
+.text-input:focus {
+    border-bottom: 2px solid #673ab7;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #b60d0d;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #eeeeee;
 }
