@@ -93,3 +93,18 @@ body {
 .submit-btn:hover {
     background-color: #eeeeee;
 }
+
+.result-box {
+    margin: 24px;
+    padding: 20px;
+    background-color: #f3e5f5; /* Light purple tint */
+    border: 1px solid #e1bee7;
+    border-radius: 8px;
+    text-align: center;
+    color: #4a148c;
+}
+
+.result-box h2 {
+    margin: 0;
+    font-size: 20px;
+}
