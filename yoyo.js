@@ -5,10 +5,11 @@ document.getElementById('history-quiz').addEventListener('submit', function(even
     // Define the correct answers
     const correctAnswers = {
         q1: '1939',
-        q2: 'winston churchill', // lowercase for easier comparison
+        q2: 'winston churchill', 
         q3: 'overlord',
         q4: 'usa',
-        q5: 'hitler'
+        q5: 'hitler', // <-- HÄR behövdes ett kommatecken!
+        q6: 'hirohito'
     };
 
     let score = 0;
@@ -18,9 +19,9 @@ document.getElementById('history-quiz').addEventListener('submit', function(even
     // 1. Check Question 1 (Radio)
     if (formData.get('q1') === correctAnswers.q1) score++;
 
-    // 2. Check Question 2 (Text input - cleaned up lowercase and whitespace)
+    // 2. Check Question 2 (Text input)
     const q2Answer = (formData.get('q2') || '').trim().toLowerCase();
-    if (q2Answer.includes('churchill')) score++; // Accepts "Churchill" or "Winston Churchill"
+    if (q2Answer.includes('churchill')) score++; 
 
     // 3. Check Question 3 (Radio)
     if (formData.get('q3') === correctAnswers.q3) score++;
@@ -31,6 +32,10 @@ document.getElementById('history-quiz').addEventListener('submit', function(even
     // 5. Check Question 5 (Text input)
     const q5Answer = (formData.get('q5') || '').trim().toLowerCase();
     if (q5Answer === correctAnswers.q5) score++;
+
+    // 6. Check Question 6 (Text input) - Ändrat till q6Answer överallt här
+    const q6Answer = (formData.get('q6') || '').trim().toLowerCase();
+    if (q6Answer === correctAnswers.q6) score++;
 
     // Display the results
     const resultDiv = document.getElementById('quiz-result');
