@@ -11,42 +11,62 @@ document.getElementById('history-quiz').addEventListener('submit', function(even
         q6: 'hirohito',
         q7: 'polen',
         q8: 'stalingrad',
-        q9: 'maginotlinjen'
+        q9: 'maginotlinjen',
+        q10: 'roosevelt',
+        q11: 'barbarossa',
+        q12: 'bismarck',
+    };
+
+    const readableAnswers = {
+        q1: '1939',
+        q2: 'Winston Churchill',
+        q3: 'Operation Overlord',
+        q4: 'USA',
+        q5: 'Hitler',
+        q6: 'Hirohito',
+        q7: 'Polen',
+        q8: 'Slaget vid Stalingrad',
+        q9: 'Maginotlinjen',
+        q10: 'Roosevelt',
+        q11: 'Operation Barbarossa',
+        q12: 'Bismarck',
     };
 
     let score = 0;
     const totalQuestions = Object.keys(correctAnswers).length;
     const formData = new FormData(event.target);
 
-    // 1. fråga 1
-    if (formData.get('q1') === correctAnswers.q1) score++;
+    const questionCards = document.querySelectorAll('.question-card');
 
-    // 2. fråga 2
-    const q2Answer = (formData.get('q2') || '').trim().toLowerCase();
-    if (q2Answer.includes('churchill')) score++; 
+    for (let i = 1; i <= totalQuestions; i++) {
+        const qName = 'q' + i;
+        const card = questionCards[i - 1]; // Tar rätt kort i ordningen
+        
+        card.classList.remove('correct', 'incorrect');
+        const oldFeedback = card.querySelector('.correct-answer-text');
+        if (oldFeedback) oldFeedback.remove();
 
-    // 3. fråga 3
-    if (formData.get('q3') === correctAnswers.q3) score++;
+        let userAnswer = (formData.get(qName) || '').trim().toLowerCase();
 
-    // 4. fråga 4
-    if (formData.get('q4') === correctAnswers.q4) score++;
+        let isCorrect = false;
+        if (qName === 'q2') {
+            isCorrect = userAnswer.includes('churchill');
+        } else {
+            isCorrect = (userAnswer === correctAnswers[qName]);
+        }
 
-    // 5. fråga 5
-    const q5Answer = (formData.get('q5') || '').trim().toLowerCase();
-    if (q5Answer === correctAnswers.q5) score++;
-
-    // 6. fråga 6
-    const q6Answer = (formData.get('q6') || '').trim().toLowerCase();
-    if (q6Answer === correctAnswers.q6) score++;
-
-    // 7. Fråga 7
-    if (formData.get('q7') === correctAnswers.q7) score++;
-
-    // 8. Fråga 8
-    if (formData.get('q8') === correctAnswers.q8) score++;
-
-    // 8. Fråga 8
-    if (formData.get('q9') === correctAnswers.q9) score++;
+        if (isCorrect) {
+            score++;
+            card.classList.add('correct'); // Gör kortet grönt
+        } else {
+            card.classList.add('incorrect'); // Gör kortet rött
+            
+            const feedbackTemplate = document.createElement('div');
+            feedbackTemplate.classList.add('correct-answer-text');
+            feedbackTemplate.innerText = `Fel! Rätt svar: ${readableAnswers[qName]}`;
+            card.appendChild(feedbackTemplate);
+        }
+    }
 
     // resultat
     const resultDiv = document.getElementById('quiz-result');

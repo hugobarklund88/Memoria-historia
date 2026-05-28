@@ -4,33 +4,32 @@ body {
 }
 
 .title {
-  font-size: 500%; /* gör texten stor */
-  color: rgb(0, 0, 0); /* vit text */
-  text-align: center; /* centrerar */
-  margin-top: 5%; /* flyttar ner den */
+  font-size: 500%;
+  color: rgb(0, 0, 0); 
+  text-align: center;
+  margin-top: 5%; 
 }
 
 .subtitle {
-  font-size: 150%; /* mindre än rubriken */
+  font-size: 150%; 
   color: rgb(0, 0, 0);
   text-align: center;
-  margin-top: -3%; /* lite mellanrum från rubriken */
+  margin-top: -3%; 
 }
 
 .my-button {
-  font-size: 20%; /* textstorlek i knappen */
-  padding: 1% 2%; /* inre avstånd (höjd och bredd) */
-  margin-top: 2%; /* avstånd från underrubrik */
-  border: 2px solid rgb(0, 0, 0); /* vit border */
-  border-radius: 10px; /* rundade hörn */
-  background-color: transparent; /* transparent bakgrund */
-  color: rgb(0, 0, 0); /* textfärg */
-  cursor: pointer; /* visar hand när man hovrar */
-  transition: 0.3s; /* mjuk övergång vid hover */
-  margin-left: 45%;
+  font-size: 200%; 
+  padding: 1% 2%; 
+  margin-top: 2%; 
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  background-color: transparent; 
+  color: rgb(0, 0, 0); 
+  cursor: pointer; 
+  transition: 0.3s; 
+  margin-left: 40.5%;
 }
 
-/* hover-effekt (valfri) */
 .my-button:hover {
   background-color: white;
   color: black;
@@ -43,8 +42,61 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  mix-blend-mode: screen; /* this makes black pixels invisible */
+  mix-blend-mode: screen; 
   pointer-events: none;
   z-index: 0;
   opacity: 1;
+}
+
+.contact-container {
+    background-color: #ffffff;
+    
+    width: 80%;           
+    max-width: 600px;      
+    
+    margin-top: 10%;        
+    margin-left: auto;    
+    margin-right: auto;    
+    
+    padding: 4%;        
+    
+    border-radius: 10px;   
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-top: 10px solid #333333; 
+    box-sizing: border-box; 
+}
+
+.input-group {
+    margin-bottom: 4%;   
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1%;     
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;          
+    padding: 2%;          
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+.contact-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    
+    padding: 2% 5%;       
+    font-size: 110%;       
+    
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+    
+    display: block;
+    margin-left: 0%;      
 }
